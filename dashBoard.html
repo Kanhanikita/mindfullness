@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="dashBoard.css">
+    <title>Mindfullness</title>
+</head>
+<body>
+    <nav>
+        <input type="checkbox" id="sidebar-active">
+        <label for="sidebar-active" class="open-sidebar-button">
+            <svg xmlns="http://www.w3.org/2000/svg" height="32px" viewBox="0 -960 960 960" width="32px" fill="#e8eaed">
+                <path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/>
+            </svg>
+        </label>
+        <div class="links-container">
+            <label for="sidebar-active" class="close-sidebar-button">
+                <svg xmlns="http://www.w3.org/2000/svg" height="32px" viewBox="0 -960 960 960" width="32px" fill="#e8eaed">
+                    <path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/>
+                </svg>
+            </label>
+            <a href="hackathonHTML.html">Home</a>
+            <a href="dashBoard.html">Feelings</a>
+            <a href="#">My Calendar</a>
+            <a href="#">Study Timer</a>
+            <a href="hackathonHTML3.html">Resources</a>
+        </div>
+    </nav>
+
+    <p id="greetings"></p>
+<h3> How are you feeling today?</h3>
+    <div class="area">
+        <ul class="circles">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+
+    <div class="container">
+        <a href="relax.html">
+        <button class="button">
+            <img src="./public/relax.png" alt="Relax">
+        </button>
+        </a>
+         <a href="sad.html">
+        <button class="button">
+            <img src="./public/Sad.png" alt="Sad">
+        </button>
+        </a>
+         <a href="angry.html">
+        <button class="button">
+            <img src="./public/Angry.png" alt="Angry">
+        </button>
+        </a>
+         <a href="confused.html">
+        <button class="button">
+            <img src="./public/confused.png" alt="Confused">
+        </button>
+        </a>
+         <a href="tired.html">
+        <button class="button">
+            <img src="./public/tired.png" alt="Tired">
+        </button>
+        </a>
+         <a href="stress.html">
+        <button class="button">
+            <img src="./public/sunbeach.png" alt="Sun Beach">
+        </button>
+        </a>
+    </div>
+
+    <script>
+        function updateGreeting() {
+            const hour = new Date().getHours();
+            const greetingElement = document.getElementById('greetings');
+            
+            let greeting;
+            if (hour >= 5 && hour < 12) {
+                greeting = "Good Morning! 🌅 How are you feeling?";
+            } else if (hour >= 12 && hour < 17) {
+                greeting = "Good Afternoon! ☀️";
+            } else if (hour >= 17 && hour < 21) {
+                greeting = "Good Evening! 🌆 How are you feeling?";
+            } else {
+                greeting = "Good Night! 🌙 How are you feeling?";
+            }
+            
+            const name = localStorage.getItem('userName') || '';
+            greetingElement.textContent = `${greeting}${name ? ' ' + name : ''}`;
+        }
+
+        updateGreeting();
+        setInterval(updateGreeting, 60000);
+
+        function setUserName(name) {
+            localStorage.setItem('userName', name);
+            updateGreeting();
+        }
+    </script>
+</body>
+</html>

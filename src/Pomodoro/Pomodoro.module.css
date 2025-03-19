@@ -1,0 +1,88 @@
+body {
+    background-color: rgb(255, 255, 255);
+    height: 100vh;
+    font-weight: bold;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+#root {
+    height: 100%;
+}
+
+.app {
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    text-align: center; /* Center all text within .app */
+}
+
+.pomodoro {
+    font-size: 6em;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center contents within .pomodoro */
+}
+
+.message {
+    font-size: 0.53em;
+    min-height: 1.3em;
+    margin-bottom: 0.5em;
+    width: 100%; /* Ensure message takes up the full width of .pomodoro */
+    text-align: center; /* Center-align the text within .message */
+}
+
+.timer {
+    border: 4mm ridge #4e54c8;
+    padding: 30px;
+}
+
+
+.startPauseButton, .resetButton, .setTimerButton {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin: 20px; 
+    padding: 15px 25px;
+    font-size: 24px;
+    cursor: pointer;
+    outline: none;
+    color: #fff;
+    background-color: #4e54c8;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 9px #999;
+    transition: background-color 0.3s, box-shadow 0.3s, transform 0.1s;
+}
+
+.startPauseButton:hover, .resetButton:hover, .setTimerButton:hover {
+    background-color: #3b409b;
+}
+
+.startPauseButton:active, .resetButton:active, .setTimerButton:active {
+    background-color: #4e54c8;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+}
+
+.timeInput {
+    margin: 10px;
+    padding: 15px 20px; 
+    font-size: 24px; 
+    width: 150px; 
+    text-align: center;
+    border: 4px solid #4e54c8;
+    border-radius: 8px;
+    outline: none;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.timeInput:focus {
+    border-color: #3b409b;
+    box-shadow: 0 0 5px rgba(75, 81, 200, 0.5);
+}
+
+
+.setTimerButton {
+    margin: 20px;
+    padding: 15px 30px; 
+    font-size: 24px; 
+}
